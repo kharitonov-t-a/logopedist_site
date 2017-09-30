@@ -1,0 +1,230 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "MessegeSearch.php",
+			"settings":
+			{
+				"buffer_size": 2057,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/basic/models/MessegeSearch.php",
+		"/var/www/html/basic/models/Messege.php",
+		"/var/www/html/basic/vendor/yiisoft/yii2/widgets/Breadcrumbs.php",
+		"/var/www/html/basic/views/layouts/main.php",
+		"/etc/php/7.0/apache2/php.ini",
+		"/var/www/html/basic/web/index.php",
+		"/var/www/html/basic/models/LoginForm.php",
+		"/var/www/html/basic/models/User.php",
+		"/var/www/html/basic/config/db.php",
+		"/var/www/html/basic/assets/AppAsset.php",
+		"/var/www/html/basic/composer.json",
+		"/var/www/html/basic/config/params.php",
+		"/var/www/html/basic/requirements.php"
+	],
+	"find":
+	{
+		"height": 30.0
+	},
+	"find_in_files":
+	{
+		"height": 78.0,
+		"where_history":
+		[
+			"/var/www/html/basic"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"short_open_tag",
+			"*/",
+			"nav desc",
+			"define('YII_ENABLE_ERROR_HANDLER', true);\n",
+			"display_errors ",
+			"log_errors",
+			"cho Nav::widget([",
+			"cho Nav::widget([ 'opt",
+			"navbar-nav navbar-right ",
+			"echo Nav::widget([ 'options' => ",
+			"echo Nav::widget([ 'options' => ['class' => 'nav desc', 'id' => 'navbar-scroller",
+			"isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []",
+			"isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [], ]) */?>",
+			"navbar-nav navbar-right",
+			"//navbar-nav navbar-right 'items' => $itemsMenu"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "MessegeSearch.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2057,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "ContactForm.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 128.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
