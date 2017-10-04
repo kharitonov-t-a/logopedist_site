@@ -35,11 +35,12 @@ class Messege extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'messege', 'datemessege', 'linkmessegeid'], 'required'],
+            [['name', 'email', 'messege', 'datemessege'], 'required'],
             [['datemessege'], 'safe'],
             [['name'], 'string', 'max' => 100],
             [['email'], 'string', 'max' => 50],
             [['messege'], 'string', 'max' => 500],
+            [['typemessege'], 'integer', 'max' => 2],
         ];
     }
 
@@ -52,9 +53,10 @@ class Messege extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'email' => 'Email',
-            'messege' => 'Messege',
+            'messege' => 'Сообщение',
             'datemessege' => 'DateMessege',
             'linkmessegeid' => 'LinkMessegeId',
+            'typemessege' => 'TypeMessege',
         ];
     }
 }

@@ -29,6 +29,7 @@ use yii\helpers\Html;
 foreach ($model as $key) {
 
     // print_r($key);
+    $id = 'Id: ' . $key["id"];
     $name = 'Автор: ' . $key["name"];
     $date =  $key["datemessege"];
     $messege = $key["messege"];
@@ -50,6 +51,9 @@ foreach ($model as $key) {
                 <div class="autorec">
                     <p>
                         <?= Html::encode($name); ?>  
+                    </p> 
+                    <p>
+                        <?= Html::encode($id); ?>  
                     </p> 
                     <!-- <font size="1"> -->
                         <p>

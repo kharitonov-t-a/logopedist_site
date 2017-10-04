@@ -1,6 +1,8 @@
 <?php
 	class Constants
 	{ 
+		const HOME_DIR = '/logopedist_site';
+
 		const QUESTION = 1;
 		const ANSWER = 2;
 

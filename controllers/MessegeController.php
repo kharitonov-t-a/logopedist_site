@@ -85,7 +85,9 @@ class MessegeController extends Controller
         $model = new Messege();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            // $model->linkmessegeid = $model->id;
+            // if($model->save())
+                return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -147,33 +149,36 @@ class MessegeController extends Controller
         $model = new Messege();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $model->linkmessegeid = $model->id;
+            if($model->save()){
+                $searchModel = new MessegeSearch();
 
-            $searchModel = new MessegeSearch();
+                // $query = Messege::find();
+                // $query->andWhere('typemessege = 1 OR typemessege = 2');
+                // $dataProvider = new ActiveDataProvider([
+                //     'query' => $query,
+                // ]);
 
-            // $query = Messege::find();
-            // $query->andWhere('typemessege = 1 OR typemessege = 2');
-            // $dataProvider = new ActiveDataProvider([
-            //     'query' => $query,
-            // ]);
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                return GridView_Messege::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        ['class' => 'yii\grid\SerialColumn'],
 
-            return GridView_Messege::widget([
-                // 'dataProvider' => $dataProvider,
-                // 'filterModel' => $searchModel,
-                'columns' => [
-                    ['class' => 'yii\grid\SerialColumn'],
+                        'id',
+                        'name',
+                        'email:email',
+                        'messege',
+                        'datemessege',
+                        'linkmessegeid',
+                        'typemessege',
 
-                    'id',
-                    'name',
-                    'email:email',
-                    'messege',
-                    'datemessege',
-                    'linkmessegeid',
-
-                    ['class' => 'yii\grid\ActionColumn'],
-                ],
-            ]);
+                        ['class' => 'yii\grid\ActionColumn'],
+                    ],
+                ]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,

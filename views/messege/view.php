@@ -31,14 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'email:email',
-            'question',
-            'datequestion',
-            'answer',
-            'dateanswer',
-            'oftenquestion',
-            'normalquestion',
-            'visible',
-            'searchid',
+            'messege',
+            'datemessege',
+            'typemessege',
         ],
     ]) ?>
 

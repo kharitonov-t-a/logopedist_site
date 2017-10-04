@@ -8,7 +8,7 @@ $(document).ready(function(){
             type: 'POST',
             data: data,
             success: function(res){
-                $('#gridview-messege').html (res);
+                $('#questions-messege').html (res);
             },
             error: function(){
                 alert('Error!');
@@ -25,7 +25,7 @@ $(document).ready(function(){
             type: 'POST',
             data: data,
             success: function(res){
-                $('#gridview-messege').html (res);
+                $('#questions-messege').html (res);
             },
             error: function(){
                 alert('Error!');

@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         }else{
 
             $propsAddFormMessege = [
-                'action' => '/basic/web/index.php?r=messege%2Fsubmit',
+                'action' => Constants::HOME_DIR . '/web/index.php?r=messege%2Fsubmit',
                 'options' => [
                     'class' => 'form-inline collapse',
                     'aria-expanded' => 'false',
@@ -46,14 +46,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'messege')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'datemessege')->textInput() ?>
+    <?= $form->field($model, 'datemessege')->textInput(['value' => date("d/m/Y")]) ?>
 
-    <?= $form->field($model, 'linkmessegeid')->textInput() ?>
+    <?//= $form->field($model, 'linkmessegeid')->hiddenInput()->label(false); ?>    
+
+    <?= $form->field($model, 'typemessege')->textInput(['value' => $typeMessege])?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
-
+        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
     <?php ActiveForm::end(); ?>
 
 </div>

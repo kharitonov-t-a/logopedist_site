@@ -39,6 +39,7 @@ class GridView_Messege extends GridView
 
         foreach ($models as $index => $model) {
         	$arrMessege[] = array(
+                "id" => $model["id"],
                 "name" => $model["name"], 
                 "datemessege" => $model["datemessege"], 
                 "messege" => $model["messege"],

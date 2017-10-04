@@ -10,4 +10,4 @@ require(__DIR__ . '/../web/php/Constants.php');
 
 $config = require(__DIR__ . '/../config/web.php');
 
-(new yii\web\Application($config))->run();
+(new yii\web\Application($config))->run(); 
