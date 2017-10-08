@@ -52,8 +52,8 @@ class MessegeSearch extends Messege
             ],
             'sort' => [
                 'defaultOrder' => [
-                    'id' => SORT_DESC,
-                    // 'title' => SORT_ASC, 
+                    'linkmessegeid' => SORT_DESC,
+                    'id' => SORT_ASC, 
                 ]
             ],
         ]);

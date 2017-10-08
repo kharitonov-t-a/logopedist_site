@@ -149,7 +149,11 @@ class MessegeController extends Controller
         $model = new Messege();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $model->linkmessegeid = $model->id;
+            //задаем вопрос - linkmessegeid вопроса = id вопроса
+            //отвечаем на вопрос - linkmessegeid ответа = id вопроса
+            if ($model->typemessege != 2){
+                $model->linkmessegeid = $model->id;
+            }
             if($model->save()){
                 $searchModel = new MessegeSearch();
 
@@ -180,8 +184,9 @@ class MessegeController extends Controller
                 ]);
             }
         } else {
-            return $this->render('create', [
+            return $this->redirect('create', [
                 'model' => $model,
+                'typeMessege' => Constants::getQuestionValue(),
             ]);
         }
 

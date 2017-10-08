@@ -438,3 +438,101 @@ backface-visibility: hidden; */
 
     display:block; width:0; /* Преодоление ограничений Firefox 3.0 
 }*/
+
+form.form-inline{
+    /*display: inline-block;*/
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+    border-radius: 5px 5px 0 0;
+}
+
+form.form-inline div.form-body div.form-group{
+    display: block; 
+    width: 100%;
+}
+
+form.form-inline > div.form-header.header-primary{
+    background-color: #4ebd4a;
+    border-top: 1px solid #A7D065;
+    border-bottom: 5px solid #3c9b39;
+    padding: 25px 30px;
+    border-radius: 5px 5px 0 0;
+}
+
+form.form-inline > div.form-header.header-primary h4{
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    text-align: left;
+    font-weight: 300;
+    font-size: 32px;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+form.form-inline > div.form-body{
+    padding: 20px 20px 0px 20px;
+}
+
+form.form-inline > div.form-body > div.column-50{
+    vertical-align: top;
+    width: 49%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 1rem 1rem 1rem;
+}
+
+form.form-inline > div.form-body > div.column-100{
+    width: 99%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 1rem 1rem 1rem;
+}
+
+form.form-inline > div.form-body input.form-control, form.form-inline > div.form-body .form-control{
+    display: block;
+    width: 100%;
+}
+
+form.form-inline > div.form-body label.control-label{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #626262;
+}
+
+div.messege-index div.messege-form{
+    margin: 10px 0px 10px 0px;
+}
+
+  [class*="fa-comments-head-"] {
+    display: inline-block;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+}
+
+/*i.fa-comments-head {
+    display: inline-block;
+    right: 0px;
+    width: 32px;
+    height: 32px;
+}*/
+
+form.form-inline > div.form-header.header-primary p.fa {
+    display: inline-block;
+/*    bottom: 68px;
+    position: absolute;
+    left: 115px;*/
+}
+
+i.fa-comments-head-question {
+    background-image: url(../img/png/006-school-doubt.png);
+}
+
+i.fa-comments-head-answer {
+    background-image: url(../img/png/002-chatting-speech-bubbles-hand-drawn-bubbles-couple.png);
+}
+
+form.form-inline > div.form-footer{
+    padding: 20px 25px;
+    background: #F5F5F5 url(../img/foobg.png) top left repeat-x;
+}

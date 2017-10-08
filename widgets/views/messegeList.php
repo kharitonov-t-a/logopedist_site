@@ -52,9 +52,11 @@ foreach ($model as $key) {
                     <p>
                         <?= Html::encode($name); ?>  
                     </p> 
-                    <p>
-                        <?= Html::encode($id); ?>  
-                    </p> 
+                    <? if (Yii::$app->user->isGuest != 1){ ?>
+                        <p>
+                            <?= Html::encode($id); ?>  
+                        </p> 
+                    <? } ?>
                     <!-- <font size="1"> -->
                         <p>
                             <?= Html::encode($date); ?>

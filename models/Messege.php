@@ -35,12 +35,14 @@ class Messege extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'messege', 'datemessege'], 'required'],
+            [['name', 'email', 'messege'], 'required'],
             [['datemessege'], 'safe'],
             [['name'], 'string', 'max' => 100],
             [['email'], 'string', 'max' => 50],
             [['messege'], 'string', 'max' => 500],
             [['typemessege'], 'integer', 'max' => 2],
+            [['linkmessegeid'], 'integer'],
+            
         ];
     }
 

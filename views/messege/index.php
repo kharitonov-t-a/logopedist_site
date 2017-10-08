@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ]);
     ?>
     <?php
-    // форма - ответить на вопрос
+    // форма - ответить на вопрос // ТОЛЬКО для администратора
     if (Yii::$app->user->isGuest != 1){
             echo $this->render('createMessege', [
                 'model' => $messegeModel,
