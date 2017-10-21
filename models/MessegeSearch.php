@@ -68,19 +68,19 @@ class MessegeSearch extends Messege
 
         // grid filtering conditions
         $query->andFilterWhere([
-            // 'id' => $this->id,
-            // 'datequestion' => $this->datequestion,
-            // 'dateanswer' => $this->dateanswer,
-            // 'oftenquestion' => $this->oftenquestion,
-            // 'normalquestion' => $this->normalquestion,
-            // 'visible' => $this->visible,
-            'searchid' => $this->searchid,
+            'linkmessegeid' => $this->searchid,
         ]);
 
-        $query->andFilterWhere(['like', 'messege', $this->messege]);
-            // ->andFilterWhere(['like', 'email', $this->email])
-            // ->andFilterWhere(['like', 'question', $this->question])
-            // ->andFilterWhere(['like', 'answer', $this->answer]);
+        $subQuery = Messege::find();
+        $subQuery -> select('id');
+        $subQuery->andFilterWhere(['like', 'messege', $this->messege]);
+
+        $query->andFilterWhere([
+            'linkmessegeid' => $subQuery,
+        ]);
+        $query->orFilterWhere([
+            'id' => $subQuery,
+        ]);
 
         return $dataProvider;
     }

@@ -17,12 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="messege-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php  
-    // форма - поиск сообщений по тексту или id сообщения
-    echo $this->render('_search', [
-        'model' => $searchModel,
-        ]); 
-    ?>
+
     <?php
 // echo"<pre>";
 // print_r($arrListAttributes);
@@ -105,7 +100,12 @@ $this->params['breadcrumbs'][] = $this->title;
     //         ]);
     //     }
     ?>
-
+    <?php  
+    // форма - поиск сообщений по тексту или id сообщения
+    echo $this->render('_search', [
+        'model' => $searchModel,
+        ]); 
+    ?>
     <!-- List сообщений пользователей -->
     <button type="button" data-toggle="collapse" data-target="#questions-messege" class="feedback-add btn">
         <span class="pseudo-link">Сообщения пользователей</span>

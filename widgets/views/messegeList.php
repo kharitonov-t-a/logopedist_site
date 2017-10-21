@@ -44,13 +44,29 @@ foreach ($model as $key) {
 
     // if($visible == 1){
 ?>
+<!-- <ul class="older">
+  <li><a href="#">Элемент списка</a></li>
+  <li><a href="#">Элемент списка</a></li>
+  <li><a href="#">Элемент списка</a></li>
+  <li><a href="#">Элемент списка</a></li>
+  <li><a href="#">Элемент списка</a></li>
+</ul> -->
         <div class="feedback-item <?= Constants::getNameTypeMessege($typemessege) ?>">
 
             <div class="feedback-header">
 
-                <div class="autorec">
+                <!-- <div class="autorec"> -->
                     <p>
-                        <?= Html::encode($name); ?>  
+                        <? 
+                            if($typemessege == Constants::QUESTION)
+                            {
+                                echo Html::encode($name);
+                            }
+                            else if($typemessege == Constants::ANSWER) 
+                            {
+                                echo Html::encode("Ответ");
+                            }
+                        ?>
                     </p> 
                     <? if (Yii::$app->user->isGuest != 1){ ?>
                         <p>
@@ -62,15 +78,15 @@ foreach ($model as $key) {
                             <?= Html::encode($date); ?>
                         </p>
                     <!-- </font> -->
-                </div> 
+                <!-- </div>  -->
                 
             </div>
 
-            <!-- <div class="feedback-content"> -->
-            <p>
-              <?= Html::encode($messege); ?>
-            </p>
-            <!-- </div> -->
+            <div class="feedback-body">
+                <p>
+                  <?= Html::encode($messege); ?>
+                </p>
+            </div>
 
         </div>
 

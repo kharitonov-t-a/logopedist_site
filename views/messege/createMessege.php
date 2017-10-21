@@ -30,12 +30,10 @@ $this->params['breadcrumbs'][] = $this->title;
             </span>
         </button>
 
-        <!-- <form action="#" method="post" class="feedback-add-form collapse" id="feedback-add-form"> -->
-		    <?= $this->render('/messege/_form', [
-		        'model' => $model,
-		        'createFromMain' => true,
-                'typeMessege' => $typeMessege,
-		    ]) ?>
-        <!-- </form> -->
+        <?= $this->render('/messege/_form', [
+            'model' => $model,
+            'createFromMain' => true,
+            'typeMessege' => $typeMessege,
+        ]) ?>
 
     </div>

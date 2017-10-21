@@ -316,7 +316,7 @@ backface-visibility: hidden; */
     color: #32CD32;
     font-weight: bold;
 }
-.feedback-item .feedback-header {
+/*.feedback-item .feedback-header {
     position: relative;
     z-index: 20;
     padding-left: 0px;
@@ -333,9 +333,9 @@ backface-visibility: hidden; */
     color: #97C02F;
     /*text-align: right;*/
     /*margin-right: 25px;*/
-}
+/*}*/
 
-.feedback-item .feedback-header p {
+/*.feedback-item .feedback-header p {
     
 }
 
@@ -343,7 +343,7 @@ backface-visibility: hidden; */
     text-decoration: none;
     font-size: 95%;
     display: inline-block;
-}
+}*/
 
 /*.feedback-item.question .feedback-header > p {
     color: #FFA500;
@@ -353,20 +353,20 @@ backface-visibility: hidden; */
     color: #FFA500;
 }*/
 
-
+/*
 .feedback-item {
-    position:relative;
+    position:relative;*/
     /*width:30%;*/
-    padding:1em 1.5em;
+/*    padding:1em 1.5em;
     margin:5px auto;
-    color:#fff;
+    color:#fff;*/
     /*background:#97C02F;*/
-    overflow:hidden;
+/*    overflow:hidden;
     border-radius: 5px 5px 5px 5px;
     width: 95%;
-}
+}*/
 
-.feedback-item.question {
+/*.feedback-item.question {
     background:#97C02F;
     margin: 0 auto 5px 0;
 }
@@ -380,18 +380,18 @@ backface-visibility: hidden; */
     content:"";
     position:absolute;
     top:0;
-    right:0;
+    right:0;*/
 /*        border-color:#fff #fff #658E15 #658E15;
         background:#658E15;*/
-    border-style:solid;
+/*    border-style:solid;
     border-width:0 30px 30px 0;
     -webkit-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
     -moz-box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
     box-shadow:0 1px 1px rgba(0,0,0,0.3), -1px 1px 1px rgba(0,0,0,0.2);
     display:block; width:0; /* Преодоление ограничений Firefox 3.0 */
-}
+}*/
 
-.feedback-item.question:before {
+/*.feedback-item.question:before {
     border-color:#fff #fff #658E15 #658E15;
     background:#658E15;
 }
@@ -399,7 +399,7 @@ backface-visibility: hidden; */
 .feedback-item.answer:before {
     border-color:#fff #fff #FFAE16 #FFAE16;
     background:#FFAE16;
-}
+}*/
 
 /*.feedback-item.rounded {
     -webkit-border-radius:5px;
@@ -535,4 +535,103 @@ i.fa-comments-head-answer {
 form.form-inline > div.form-footer{
     padding: 20px 25px;
     background: #F5F5F5 url(../img/foobg.png) top left repeat-x;
+}
+
+.feedback-item {
+  border-bottom: dashed 1px #006699;
+  margin-top: 15px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  padding: 5px;
+}
+
+@media(min-width:767px) {
+    .feedback-item.answer{
+        margin-top: -10px;
+        margin-left: 35px;
+        background-color: white;
+    }
+    div.feedback-add-wrap{
+        width: 65%;
+    }
+}
+
+/*MOBIL*/
+@media(max-width:767px) { 
+    .feedback-item.answer{
+        margin-top: -10px;
+        margin-left: 0px;
+        background-color: whitesmoke;
+    }
+}
+
+
+
+
+
+.feedback-item > .feedback-header > p{
+    display: inline;
+    border: solid 1px #dedede;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
+    -webkit-transition: .4s linear;
+    transition: .4s linear;
+    margin: 4px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 16px;
+}
+
+.feedback-item > .feedback-header{
+    margin: 4px 0px 10px 0px;
+}
+
+.feedback-item > .feedback-body > p{
+    margin: 15px 0px 10px 4px;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 14px;
+}
+
+/*.feedback-item > .feedback-body{
+    border: solid 1px #dedede;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 0, 0, 0.1) inset;
+    -webkit-transition: .4s linear;
+    transition: .4s linear;
+}
+*/
+
+
+form.form-inline div.form-body div.form-group.field-messege-typemessege{
+    display: none;
+}
+
+.form-group.field-messegesearch-messege{
+    width: 86%;
+    display: inline-block;
+}
+
+.form-group.field-messegesearch-messege label.control-label{
+
+}
+
+.form-group.field-messegesearch-messege #messegesearch-messege{
+    display: inline;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.messege-search-add-wrap button#search-btn-primary{
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: -6px;
+    border-radius: 0px 4px 4px 0px;
+    width: 14%;
+}
+
+.messege-search-add-wrap .help-block{
+    display: none;
+}
+
+div#questions-messege div.grid-view div.summary{
+    margin-bottom: 20px;
+}
+
+form.question-add-form div.form-body{
+    background: linear-gradient(to bottom, #F5F5F5, white);
 }
