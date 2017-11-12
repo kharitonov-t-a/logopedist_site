@@ -36,6 +36,7 @@ class GridView_Messege extends GridView
     	$models = array_values($this->dataProvider->getModels());
 
         $arrMessege = [];
+        // print_r($models);
 
         foreach ($models as $index => $model) {
         	$arrMessege[] = array(

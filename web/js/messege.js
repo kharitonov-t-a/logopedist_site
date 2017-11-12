@@ -34,5 +34,14 @@ $(document).ready(function(){
         return false;
     });
 
+    $('#questions-messege').on('hidden.bs.collapse', function () {
+        // alert("sfssddf");
+        $('#questions-messege-span').html('Показать сообщения пользователей');
+    })
+    $('#questions-messege').on('shown.bs.collapse', function () {
+        // alert("sfssddf");
+        $('#questions-messege-span').html('Скрыть сообщения пользователей');
+    })
+
 
 });

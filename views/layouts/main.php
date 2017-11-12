@@ -62,7 +62,7 @@ AppAsset::register($this);
     // ]);
 
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right nav mobil'],
+        'options' => ['class' => 'nav desc', 'id' => 'navbar-desc'],
         'items' => $itemsMenu,
     ]);
     NavBar::end();
@@ -76,7 +76,7 @@ AppAsset::register($this);
 
     <div id="align">
         <div class="content">
-            <div class="container-navbar">
+            <!-- <div class="container-navbar"> -->
                 <?/*= Menu::widget([
                     'options' => ['class' => 'nav desc', 'id' => 'navbar-desc'],//navbar-nav navbar-right 
                     'items' => $itemsMenu,
@@ -89,10 +89,10 @@ AppAsset::register($this);
         <li><a>Massage</a></li>
     </ul> -->
 <?
-    echo Nav::widget([
-        'options' => ['class' => 'nav desc', 'id' => 'navbar-desc'],
-        'items' => $itemsMenu,
-    ]);
+    // echo Nav::widget([
+    //     'options' => ['class' => 'nav desc', 'id' => 'navbar-desc'],
+    //     'items' => $itemsMenu,
+    // ]);
 
     echo Nav::widget([
         'options' => ['class' => 'nav desc', 'id' => 'navbar-scroller'],
@@ -102,7 +102,7 @@ AppAsset::register($this);
 
 ?>
 
-            </div>
+            <!-- </div> -->
 
 
             <?/*= Breadcrumbs::widget([

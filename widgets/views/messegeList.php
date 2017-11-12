@@ -34,6 +34,9 @@ foreach ($model as $key) {
     $date =  $key["datemessege"];
     $messege = $key["messege"];
     $typemessege = $key["typemessege"];
+    if($messege != "empty")
+    {
+
     // $visible = $key["visible"];
     // $this->params['breadcrumbs'][] = ['label' => 'Messeges', 'url' => ['index']];
     // $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
@@ -115,7 +118,7 @@ foreach ($model as $key) {
 
 
 <?php
-    // }
+    }
 }
 ?>
 

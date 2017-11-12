@@ -253,8 +253,8 @@ backface-visibility: hidden; */
 
 #align > div.content {
     background: #ffffff;
-    border-radius: 4px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 10px 20px 30px 20px;
 }
 
 .row {
@@ -301,6 +301,7 @@ backface-visibility: hidden; */
 
 
 .feedback-item {
+    border-radius: 0px 100px 50px 0px;
 /*    padding: 5px 20px;
     margin-top: 2px;*/
     /*background: #c5dae8 url(../img/borderbp.jpg) no-repeat right top;*/
@@ -550,8 +551,13 @@ form.form-inline > div.form-footer{
         margin-left: 35px;
         background-color: white;
     }
-    div.feedback-add-wrap{
-        width: 65%;
+    div.feedback-add-wrap div.messege-form{
+        /*width: 65%;*/
+    }
+    div#questions-help{
+        width: 35%;
+        border: solid 1px #dedede;
+        border-radius: 4px;
     }
 }
 
@@ -561,6 +567,9 @@ form.form-inline > div.form-footer{
         margin-top: -10px;
         margin-left: 0px;
         background-color: whitesmoke;
+    }
+    div#questions-help{
+        display: none;
     }
 }
 
@@ -634,4 +643,18 @@ div#questions-messege div.grid-view div.summary{
 
 form.question-add-form div.form-body{
     background: linear-gradient(to bottom, #F5F5F5, white);
+}
+
+ul#navbar-desc > li{
+    margin-left: -6px;
+    border-right: 1px solid;
+    border-left: 1px solid;
+}
+
+ul#navbar-desc > li.active{
+    background-color: #003257;
+}
+
+ul#navbar-desc > li > a{
+    padding: 30px 25px;
 }

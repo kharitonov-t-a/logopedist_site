@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\grid\GridView;
 use app\widgets\GridView_Messege;
+use Constants;
 
 /**
  * MessegeController implements the CRUD actions for Messege model.
@@ -144,24 +145,30 @@ class MessegeController extends Controller
         }
     }
 
-    public function actionSubmit()
+    public function actionSubmit_answer()
     {
         $model = new Messege();
+        $searchModel = new MessegeSearch();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            //задаем вопрос - linkmessegeid вопроса = id вопроса
-            //отвечаем на вопрос - linkmessegeid ответа = id вопроса
-            if ($model->typemessege != 2){
-                $model->linkmessegeid = $model->id;
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            $dataProvider->query->andWhere('linkmessegeid = ' . $model->linkmessegeid);
+            $dataProvider->query->andWhere('typemessege = ' . $model->typemessege);
+            $arrModelAnswer = array_values($dataProvider->getModels());
+
+            
+            if($arrModelAnswer[0]->attributes["messege"] == "empty")
+            {
+                $modelAnswer = $this->findModel($arrModelAnswer[0]->attributes["id"]);
+                $modelAnswer->messege = $model->messege;
+                $model = $modelAnswer;
             }
-            if($model->save()){
-                $searchModel = new MessegeSearch();
+            
 
-                // $query = Messege::find();
-                // $query->andWhere('typemessege = 1 OR typemessege = 2');
-                // $dataProvider = new ActiveDataProvider([
-                //     'query' => $query,
-                // ]);
+            if($model->save()){
+
+                $searchModel = new MessegeSearch();
 
                 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -182,6 +189,55 @@ class MessegeController extends Controller
                         ['class' => 'yii\grid\ActionColumn'],
                     ],
                 ]);
+            }
+        }
+        
+    }
+
+    public function actionSubmit_question()
+    {
+        $model = new Messege();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            //задаем вопрос - linkmessegeid вопроса = id вопроса
+            //отвечаем на вопрос - linkmessegeid ответа = id вопроса
+
+            $model->linkmessegeid = $model->id;
+
+            if($model->save()){
+
+                $modelAnswer = new Messege();
+                $modelAnswer->linkmessegeid = $model->id;
+                $modelAnswer->typemessege = Constants::getAnswerValue();
+                $modelAnswer->name = "empty";
+                $modelAnswer->email = "empty";
+                $modelAnswer->messege = "empty";
+
+                if($modelAnswer->save()){
+
+                    $searchModel = new MessegeSearch();
+
+                    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+                    return GridView_Messege::widget([
+                        'dataProvider' => $dataProvider,
+                        'filterModel' => $searchModel,
+                        'columns' => [
+                            ['class' => 'yii\grid\SerialColumn'],
+
+                            'id',
+                            'name',
+                            'email:email',
+                            'messege',
+                            'datemessege',
+                            'linkmessegeid',
+                            'typemessege',
+
+                            ['class' => 'yii\grid\ActionColumn'],
+                        ],
+                    ]);
+
+                }
             }
         } else {
             return $this->redirect('create', [

@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
         }else{
 
             $propsAddFormMessege = [
-                'action' => Constants::HOME_DIR . '/web/index.php?r=messege%2Fsubmit',
+                'action' => Constants::HOME_DIR . '/web/index.php?r=messege%2Fsubmit_' . Constants::getNameTypeMessege($typeMessege),
                 'options' => [
                     'class' => 'form-inline collapse',
                     'aria-expanded' => 'false',

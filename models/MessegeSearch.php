@@ -6,7 +6,7 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Messege;
-
+use Constants;
 /**
  * MessegeSearch represents the model behind the search form about `app\models\Messege`.
  */
@@ -58,7 +58,45 @@ class MessegeSearch extends Messege
             ],
         ]);
 
+
+
+        // $models = array_values($dataProvider1->getModels());
+        // var_dump($query);
+        // if(count($models) == 11 && $models[10]->attributes["typemessege"] == Constants::QUESTION)
+        // {
+        //     $dataProvider = new ActiveDataProvider([
+        //         'query' => $query,
+        //         'pagination' => [
+        //             'pageSize' => 10,
+        //         ],
+        //         'sort' => [
+        //             'defaultOrder' => [
+        //                 'linkmessegeid' => SORT_DESC,
+        //                 'id' => SORT_ASC, 
+        //             ]
+        //         ],
+        //     ]);
+
+        //     // $this->load($params);
+        // }else{
+        //     $dataProvider = new ActiveDataProvider([
+        //         'query' => $query,
+        //         'pagination' => [
+        //             'pageSize' => 11,
+        //         ],
+        //         'sort' => [
+        //             'defaultOrder' => [
+        //                 'linkmessegeid' => SORT_DESC,
+        //                 'id' => SORT_ASC, 
+        //             ]
+        //         ],
+        //     ]);
+        // }
+        // $models = array_values($dataProvider->getModels());
+        // var_dump($models);
+
         $this->load($params);
+
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
@@ -72,7 +110,7 @@ class MessegeSearch extends Messege
         ]);
 
         $subQuery = Messege::find();
-        $subQuery -> select('id');
+        $subQuery -> select('linkmessegeid');
         $subQuery->andFilterWhere(['like', 'messege', $this->messege]);
 
         $query->andFilterWhere([

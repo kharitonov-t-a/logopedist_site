@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'buttonMessege' => 'Написать вопрос',
         ]);
     ?>
+
     <?php
     // форма - ответить на вопрос // ТОЛЬКО для администратора
     if (Yii::$app->user->isGuest != 1){
@@ -107,9 +108,9 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); 
     ?>
     <!-- List сообщений пользователей -->
-    <button type="button" data-toggle="collapse" data-target="#questions-messege" class="feedback-add btn">
+<!--     <button type="button" data-toggle="collapse" data-target="#questions-messege" class="feedback-add btn">
         <span class="pseudo-link">Сообщения пользователей</span>
-    </button>
+    </button> -->
     <div id="questions-messege" class="collapse in" aria-expanded="true">
         <?= GridView_Messege::widget([
             'dataProvider' => $dataProvider,
