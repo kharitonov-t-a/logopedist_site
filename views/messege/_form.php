@@ -52,18 +52,22 @@ use yii\widgets\ActiveForm;
         <div class="column-50">
 
             <? // ТОЛЬКО для администратора для ответов на вопросы
-                if (Yii::$app->user->isGuest != 1 && $typeMessege == 2){
+                if (Yii::$app->user->isGuest != 1 && $typeMessege == Constants::getAnswerValue()){
                     echo $form->field($model, 'linkmessegeid')->textInput(['maxlength' => true]);   
                 }
             ?>
 
-            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+            <? if ($typeMessege == Constants::getQuestionValue()){ ?>
+                <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+            <? } ?>
 
         </div>
 
+    <? if ($typeMessege == Constants::getQuestionValue()){ ?>
         <div class="column-50">
             <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
         </div>
+    <? } ?>
         
         <div class="column-100">
             <?= $form->field($model, 'messege')->textarea(['maxlength' => true]) ?>

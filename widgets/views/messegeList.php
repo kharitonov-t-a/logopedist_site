@@ -80,6 +80,9 @@ foreach ($model as $key) {
                         <p>
                             <?= Html::encode($date); ?>
                         </p>
+                    <? if (Yii::$app->user->isGuest != 1){ ?>
+                        <a href= "<?=Constants::HOME_DIR . '/web/index.php?r=messege%2Fdelete&id=' . $key['id']?>">Удалить</a>
+                    <? } ?>
                     <!-- </font> -->
                 <!-- </div>  -->
                 

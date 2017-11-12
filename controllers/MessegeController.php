@@ -26,7 +26,7 @@ class MessegeController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['GET'],
                 ],
             ],
         ];
@@ -122,11 +122,14 @@ class MessegeController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionDelete($id)
+    public function actionDelete()
     {
-        $this->findModel($id)->delete();
+        if (Yii::$app->user->isGuest != 1)
+        {
+            $this->findModel($_GET['id'])->delete();
 
-        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+        }
     }
 
     /**
@@ -152,6 +155,9 @@ class MessegeController extends Controller
 
         if ($model->load(Yii::$app->request->post()))
         {
+            $model->name = "empty";
+            $model->email = "empty";
+                
             $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
             $dataProvider->query->andWhere('linkmessegeid = ' . $model->linkmessegeid);
             $dataProvider->query->andWhere('typemessege = ' . $model->typemessege);
