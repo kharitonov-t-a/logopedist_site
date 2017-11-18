@@ -40,9 +40,14 @@ class MessegeController extends Controller
     {
         $searchModel = new MessegeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+
+
+
         // $dataProvider->query->andWhere('(typemessege = 1 OR typemessege = 2) AND visible = 1');
         $messegeModel = new Messege();
-
+// print_r($searchModel);
+// print_r($dataProvider);
         // $objAttributes = $searchModel::find()->all();
         // foreach ($objAttributes as $listAtributes) {
         //     $arrListAttributes[] = $listAtributes->getAttributes();
@@ -150,6 +155,12 @@ class MessegeController extends Controller
 
     public function actionSubmit_answer()
     {
+        //после ajax добавления сообщения почемуто у постранички меняются ссылки на r=messege%2Fsubmit_answer
+        //поэтому делаем редирект на messege index
+        if(Yii::$app->request->get('r') == "messege/submit_answer" && Yii::$app->request->get('page') != null && Yii::$app->request->get('per-page') != null){
+            return $this->redirect(Constants::HOME_DIR . '/web/index.php?r=messege%2Findex&page=' . Yii::$app->request->get('page') . '&per-page=' . Yii::$app->request->get('per-page'));
+        }
+
         $model = new Messege();
         $searchModel = new MessegeSearch();
 
@@ -202,6 +213,12 @@ class MessegeController extends Controller
 
     public function actionSubmit_question()
     {
+        //после ajax добавления сообщения почемуто у постранички меняются ссылки на r=messege%2Fsubmit_answer
+        //поэтому делаем редирект на messege index
+        if(Yii::$app->request->get('r') == "messege/submit_question" && Yii::$app->request->get('page') != null && Yii::$app->request->get('per-page') != null){
+            return $this->redirect(Constants::HOME_DIR . '/web/index.php?r=messege%2Findex&page=' . Yii::$app->request->get('page') . '&per-page=' . Yii::$app->request->get('per-page'));
+        }
+
         $model = new Messege();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

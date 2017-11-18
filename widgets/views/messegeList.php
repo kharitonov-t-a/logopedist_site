@@ -71,10 +71,12 @@ foreach ($model as $key) {
                             }
                         ?>
                     </p> 
-                    <? if (Yii::$app->user->isGuest != 1){ ?>
+                    <? if (Yii::$app->user->isGuest != 1 && $typemessege == Constants::QUESTION){ ?>
                         <p>
-                            <?= Html::encode($id); ?>  
-                        </p> 
+                            <a class="id-answer" name="<?=$key["id"]?>">
+                                <?= Html::encode($id); ?>  
+                            </a> 
+                        </p>
                     <? } ?>
                     <!-- <font size="1"> -->
                         <p>
@@ -90,7 +92,7 @@ foreach ($model as $key) {
 
             <div class="feedback-body">
                 <p>
-                  <?= Html::encode($messege); ?>
+                  <?= nl2br(Html::encode($messege)); ?>
                 </p>
             </div>
 
